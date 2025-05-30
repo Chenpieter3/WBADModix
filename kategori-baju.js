@@ -43,8 +43,8 @@
      const cards = Array.from(grid.querySelectorAll('.product-card'));
 
      cards.sort((a, b) => {
-         const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('$', ''));
-         const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('$', ''));
+         const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('Rp', ''));
+         const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('Rp', ''));
 
          return sortBy.includes('Low to High') ? priceA - priceB : priceB - priceA;
      });
