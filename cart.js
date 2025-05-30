@@ -200,8 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
       if (getCart().length > 0) {
-        showToast("Redirecting to checkout... (Not implemented)");
-        // Example: window.location.href = 'checkout.html';
+        window.location.href = 'checkout.html';
       }
     });
   }

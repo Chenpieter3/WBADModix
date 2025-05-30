@@ -1,0 +1,222 @@
+/* order-history.css */
+
+/* Style dasar mungkin diwarisi dari checkout.css atau cart.css jika dilink */
+.order-history-page {
+  margin: 40px 0; /* Sesuaikan dengan margin di cart.css atau checkout.css */
+}
+
+.order-history-page h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+#order-list-container .empty-history-message {
+  /* Style sudah ada di HTML, bisa disesuaikan di sini jika perlu */
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.order-item-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item-header .order-info h3 {
+  font-size: 17px; /* Sedikit lebih kecil dari H2 halaman */
+  color: #333;
+  margin: 0 0 5px 0;
+}
+.order-item-header .order-info .order-id,
+.order-item-header .order-info .order-date {
+  font-size: 13px;
+  color: #666;
+  display: block; /* Agar ID dan Tanggal di baris berbeda jika perlu */
+}
+
+.order-item-header .order-status {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.order-status.processing {
+  background-color: #ffc107;
+  color: #333;
+}
+.order-status.shipped {
+  background-color: #17a2b8;
+}
+.order-status.delivered {
+  background-color: #28a745;
+}
+.order-status.cancelled {
+  background-color: #dc3545;
+}
+
+.order-products-list {
+  margin-bottom: 20px;
+}
+
+.history-product-item {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Jarak antara gambar dan detail */
+  padding: 15px 0;
+  border-bottom: 1px dotted #f0f0f0;
+}
+.history-product-item:last-child {
+  border-bottom: none;
+  padding-bottom: 5px; /* Kurangi padding bawah untuk item terakhir */
+}
+
+.history-product-item img {
+  width: 70px; /* Ukuran gambar produk */
+  height: auto;
+  max-height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.history-product-details {
+  flex-grow: 1;
+}
+
+.history-product-details .product-name {
+  font-weight: 500;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 3px;
+}
+.history-product-details .product-meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 3px;
+}
+.history-product-details .product-qty {
+  font-size: 13px;
+  color: #555;
+}
+
+.history-product-subtotal {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  min-width: 90px; /* Agar subtotal rapi */
+  text-align: right;
+}
+
+.order-summary-history,
+.order-shipping-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+.order-shipping-info {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.order-summary-history h4,
+.order-shipping-info h4 {
+  font-size: 16px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.order-summary-history p,
+.order-shipping-info p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+.order-shipping-info p strong {
+  color: #444;
+  min-width: 120px; /* Untuk alignment label */
+  display: inline-block;
+}
+
+.order-summary-history .total-amount {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745; /* Warna total, sesuaikan dengan tema */
+}
+.order-summary-history .total-amount span {
+  font-size: 15px;
+  color: #333;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .order-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Jarak antar elemen di header saat stacked */
+  }
+  .history-product-item {
+    gap: 15px;
+  }
+  .history-product-item img {
+    width: 60px;
+  }
+  .history-product-details .product-name {
+    font-size: 14px;
+  }
+  .history-product-details .product-meta,
+  .history-product-details .product-qty {
+    font-size: 12px;
+  }
+  .history-product-subtotal {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-item-card {
+    padding: 15px;
+  }
+  .order-item-header .order-info h3 {
+    font-size: 16px;
+  }
+  .history-product-item {
+    flex-direction: column; /* Stack gambar dan detail di mobile kecil */
+    align-items: flex-start;
+  }
+  .history-product-subtotal {
+    text-align: left;
+    margin-top: 8px;
+  }
+  .order-summary-history .total-amount {
+    font-size: 16px;
+    text-align: left;
+  }
+  .order-summary-history .total-amount span {
+    display: block; /* Total label di atas angka */
+    margin-bottom: 3px;
+  }
+}
