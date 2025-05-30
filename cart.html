@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessories | ModiX</title>
-    <link rel="stylesheet" href="kategori-baju.css" />
+    <title>Shopping Cart | ModiX</title>
+    <link rel="stylesheet" href="product-celana-detail.css" />
+    <link rel="stylesheet" href="cart.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -25,110 +26,93 @@
             </ul>
           </li>
           <li><a href="#">Collections</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="#">About</a></li>
         </ul>
         <div class="header-icons">
           <a href="#"><i class="fas fa-search"></i></a>
           <a href="#"><i class="fas fa-user"></i></a>
-          <a href="#"><i class="fas fa-shopping-bag"></i></a>
+          <a
+            href="cart.html"
+            class="cart-icon-wrapper active"
+            style="position: relative"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span
+              id="cart-badge"
+              style="
+                display: none;
+                position: absolute;
+                top: -6px;
+                right: -10px;
+                background: red;
+                color: white;
+                font-size: 10px;
+                border-radius: 50%;
+                padding: 2px 5px;
+              "
+              >●</span
+            >
+          </a>
         </div>
       </div>
     </header>
 
-    <!-- Category Header -->
     <div class="category-header">
       <div class="container">
-        <h1>ACCESSORIES</h1>
+        <h1>Shopping Cart</h1>
         <div class="breadcrumb">
           <a href="#">Home</a>
           <span>/</span>
-          <a href="#">Shop</a>
-          <span>/</span>
-          <a href="#">Shirts</a>
+          <a href="#">Shop</a> <span>/</span>
+          <a href="cart.html">Cart</a>
         </div>
       </div>
     </div>
 
-    <!-- Main Content -->
     <main class="container">
-      <!-- Filters -->
-      <div class="filters">
-        <select class="sort-dropdown">
-          <option>Featured</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-        </select>
-      </div>
-
-      <!-- Product Grid -->
-      <div class="product-grid">
-        <!-- Product Card 1 -->
-        <div class="product-card">
-          <a href="#">
-            <div class="product-image">
-              <img src="assets/Accessories/lanyard-1.png" alt="Stripe Woman" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Leather Lanyard</h3>
-              <p class="product-price">Rp 150.000,00</p>
-            </div>
-          </a>
+      <div class="cart-page">
+        <div class="cart-items-section">
+          <h2>Your Cart Items (<span id="cart-item-count">0</span>)</h2>
+          <div id="cart-items-container"></div>
+          <div
+            id="empty-cart-message"
+            style="display: none; text-align: center; padding: 40px 0"
+          >
+            <i
+              class="fas fa-shopping-cart fa-3x"
+              style="color: #ccc; margin-bottom: 20px"
+            ></i>
+            <p>Your cart is currently empty.</p>
+            <a href="./kategori-celana.html" class="btn-continue-shopping"
+              >Continue Shopping</a
+            >
+          </div>
         </div>
 
-        <!-- Product Card 2 -->
-        <div class="product-card">
-          <a href="#">
-            <div class="product-image">
-              <img
-                src="./assets/Accessories/pouch-1.webp"
-                alt="Classic Pouch"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Classic Pouch</h3>
-              <p class="product-price">Rp 300.000,00</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- Product Card 3 -->
-        <div class="product-card">
-          <a href="product-accessories-detail.html">
-            <div class="product-image">
-              <img
-                src="assets/Accessories/Laptop-sleeve 1.webp"
-                alt="Navy Blue Oxford Shirt"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Laptop Sleeves</h3>
-              <p class="product-price">Rp 350.000,00</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- Product Card 4 -->
-        <div class="product-card">
-          <a href="#">
-            <div class="product-image">
-              <img
-                src="assets/Accessories/leather belt.webp"
-                alt="Long White Shirt Man"
-              />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Leather Belt</h3>
-              <p class="product-price">Rp 175.000,00</p>
-            </div>
-          </a>
+        <div class="cart-summary-section">
+          <h2>Order Summary</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">Rp 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>FREE</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="summary-total">Rp 0</span>
+          </div>
+          <button class="checkout-btn" disabled>Proceed to Checkout</button>
+          <a href="./kategori-celana.html" class="continue-shopping-link"
+            >Or Continue Shopping</a
+          >
         </div>
       </div>
     </main>
 
-    <!-- Toast Notification (hidden by default) -->
-    <div class="toast" id="toast">Item added to cart!</div>
+    <div class="toast" id="toast">Item updated!</div>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-container">
@@ -183,6 +167,6 @@
       </div>
     </footer>
 
-    <script src="kategori-baju.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
