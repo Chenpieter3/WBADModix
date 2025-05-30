@@ -71,6 +71,7 @@ function parseRupiah(rupiahString) {
 }
 
 function addToCart() {
+<<<<<<< HEAD
   const productNameElement = document.querySelector(".product-detail-info h2");
   const productPriceElement = document.querySelector(
     ".product-detail-info .product-price"
@@ -94,12 +95,21 @@ function addToCart() {
     showToast("Error: Could not add item. Product details missing.");
     return;
   }
+=======
+  const selectedSize = document.querySelector('.size-btn.selected')?.textContent;
+  const quantity = parseInt(document.getElementById('quantity')?.value || '1', 10);
+  const productName = document.querySelector('.product-detail-info h2')?.textContent || 'Unknown Product';
+  const productPrice = document.querySelector('.product-price')?.textContent || '0';
+  const productImage = document.getElementById('main-img')?.src || '';
+  const productId = productName.toLowerCase().replace(/\s+/g, '-');
+>>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 
   if (!selectedSize) {
     showToast("Please select a size first!");
     return;
   }
 
+<<<<<<< HEAD
   const product = {
     // ID dibuat unik berdasarkan nama produk dan ukuran
     id:
@@ -155,6 +165,22 @@ function updateHeaderCartBadge() {
     console.error("Error parsing cart from localStorage for badge update:", e);
     cart = [];
   }
+=======
+  const cartItem = {
+    id: productId,
+    name: productName,
+    price: productPrice,
+    size: selectedSize,
+    quantity: quantity,
+    image: productImage
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(cartItem);
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  showToast(`Added to cart! ${quantity}x ${productName} (Size: ${selectedSize})`);
+>>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 
   const cartBadge = document.getElementById("cart-badge");
   if (!cartBadge) {
@@ -233,5 +259,17 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartButton.addEventListener("click", addToCart);
   }
 
+<<<<<<< HEAD
   updateHeaderCartBadge();
+=======
+  document.querySelectorAll('.size-btn:not(.disabled)').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      document.getElementById('add-to-bag').disabled = false;
+    });
+  });
+
+  document.querySelector('.add-to-cart-btn')?.addEventListener('click', addToCart);
+>>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 });
