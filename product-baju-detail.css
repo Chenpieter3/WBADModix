@@ -111,6 +111,44 @@ header {
   margin: 0 5px;
 }
 
+/* Dropdown Menu */
+.nav-menu li {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  list-style: none;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+
 /* Product Detail */
 .product-detail {
   display: flex;
