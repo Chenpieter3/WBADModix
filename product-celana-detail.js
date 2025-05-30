@@ -63,7 +63,6 @@ function showToast(msg = "Item action performed!") {
   setTimeout(() => toast.classList.remove("show"), 3000);
 }
 
-<<<<<<< HEAD
 // Helper function to parse Rupiah string to number
 function parseRupiah(rupiahString) {
   if (!rupiahString) return 0;
@@ -95,39 +94,12 @@ function addToCart() {
     showToast("Error: Could not add item. Product details missing.");
     return;
   }
-=======
-// function addToCart() {
-//   const selectedSize = document.querySelector('.size-btn.selected')?.textContent;
-//   const selectedColor = document.querySelector('.color-option.active')?.dataset.color;
-
-//   if (!selectedSize) {
-//     showToast("Please select a size first!");
-//     return;
-//   }
-
-//   showToast(`Added to cart! Size: ${selectedSize}, Color: ${selectedColor || 'Default'}`);
-
-//   const cartBadge = document.getElementById("cart-badge");
-//   if (cartBadge) {
-//     cartBadge.style.display = "inline-block";
-//   }
-// }
-
-function addToCart() {
-  const selectedSize = document.querySelector('.size-btn.selected')?.textContent;
-  const quantity = parseInt(document.getElementById('quantity')?.value || '1', 10);
-  const productName = document.querySelector('.product-detail-info h2')?.textContent || 'Unknown Product';
-  const productPrice = document.querySelector('.product-price')?.textContent || '0';
-  const productImage = document.getElementById('main-img')?.src || '';
-  const productId = productName.toLowerCase().replace(/\s+/g, '-');
->>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 
   if (!selectedSize) {
     showToast("Please select a size first!");
     return;
   }
 
-<<<<<<< HEAD
   const product = {
     // ID dibuat unik berdasarkan nama produk dan ukuran
     id:
@@ -183,22 +155,6 @@ function updateHeaderCartBadge() {
     console.error("Error parsing cart from localStorage for badge update:", e);
     cart = [];
   }
-=======
-  const cartItem = {
-    id: productId,
-    name: productName,
-    price: productPrice,
-    size: selectedSize,
-    quantity: quantity,
-    image: productImage
-  };
-
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.push(cartItem);
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  showToast(`Added to cart! ${quantity}x ${productName} (Size: ${selectedSize})`);
->>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 
   const cartBadge = document.getElementById("cart-badge");
   if (!cartBadge) {
@@ -215,7 +171,6 @@ function updateHeaderCartBadge() {
   }
 }
 
-<<<<<<< HEAD
 function openTab(tabId, event) {
   document
     .querySelectorAll(".tab-content")
@@ -233,14 +188,6 @@ function openTab(tabId, event) {
   if (event && event.target) {
     event.target.classList.add("active");
   }
-=======
-
-function openTab(tabId) {
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(tabId)?.classList.add('active');
-  event.target.classList.add('active');
->>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -286,20 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartButton.addEventListener("click", addToCart);
   }
 
-<<<<<<< HEAD
   updateHeaderCartBadge();
-=======
-  document.querySelectorAll('.size-btn:not(.disabled)').forEach(btn => {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
-      this.classList.add('selected');
-      document.getElementById('add-to-bag').disabled = false;
-    });
-  });
-
-
-  document.querySelector('.add-to-cart-btn')?.addEventListener('click', addToCart);
->>>>>>> 197c4ed8077289b999b1e32844de7f138e37b386
 });
 
 
