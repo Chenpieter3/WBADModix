@@ -30,82 +30,132 @@
       </div>
     </header>
 
-    <!-- Category Header -->
     <div class="category-header">
       <div class="container">
         <h1>ABOUT US</h1>
       </div>
     </div>
 
-    <section class="video-section">
-      <h1>Company Profile</h1>
-      <video controls>
-        <source
-          src="asset/video/Selamat_datang_di_ModiX_V1.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="about-word">
-        <h2>Selamat datang di ModiX!</h2>
-        <p>
-          ModiX adalah platform jual beli pakaian yang berbasis di Jakarta,
-          hadir untuk memenuhi kebutuhan fashion Anda dengan cara yang lebih
-          mudah, cepat, dan terpercaya. Kami percaya bahwa setiap pakaian
-          memiliki cerita dan nilai yang bisa terus berlanjut di tangan yang
-          baru. <br /><br />
-          Di ModiX, kami menyediakan berbagai pilihan pakaian mulai dari fashion
-          kasual hingga busana kekinian, baik baru maupun preloved, dengan
-          kualitas terbaik dan harga yang bersahabat. Kami juga membuka
-          kesempatan bagi siapa pun untuk menjual pakaiannya kembali dan
-          mendapatkan penghasilan tambahan secara praktis. <br /><br />
-          Dengan semangat berkelanjutan, kami ingin mengajak Anda untuk ikut
-          serta dalam gaya hidup yang lebih ramah lingkungan melalui konsep
-          reuse dan recycle pakaian. Selain itu, kami berkomitmen untuk
-          memberikan pengalaman belanja online yang nyaman, aman, dan
-          menyenangkan. <br /><br />
-          Terima kasih telah menjadi bagian dari perjalanan ModiX. Yuk, mulai
-          temukan gaya unikmu bersama kami!
+    <section class="about-modix-intro">
+      <div class="container">
+        <h2>Welcome to ModiX: Fashion Forward, Community Focused</h2>
+        <p class="subtitle">
+          Temukan cara baru untuk menikmati fashion. Di ModiX, kami sangat bersemangat untuk menghubungkan para penggemar gaya dengan pakaian berkualitas, mendorong keberlanjutan, dan membangun komunitas tepercaya.
         </p>
       </div>
     </section>
 
-    <section class="counter-section">
-      <h2>Total Pembeli Puas</h2>
-      <div id="buyer-counter">0</div>
+    <section class="our-story-section">
+        <div class="container">
+            <div class="story-content-wrapper">
+                <div class="story-text">
+                    <h3>Our Journey & Vision</h3>
+                    <p>
+                        ModiX lahir di Jakarta dari sebuah ide sederhana: fashion harus mudah diakses, menyenangkan, dan bertanggung jawab. Kami membayangkan sebuah platform di mana Anda dapat menemukan pakaian favorit Anda berikutnya - baik itu pakaian baru maupun pakaian bekas yang disayangi - dengan mudah, cepat, dan dapat diandalkan.
+                    </p>
+                    <p>
+                        Kami percaya bahwa setiap pakaian memiliki cerita dan nilai yang dapat terus berlanjut. Itulah mengapa kami memberdayakan Anda untuk tidak hanya menemukan beragam gaya, mulai dari pakaian kasual hingga tren terbaru, tetapi juga untuk memberikan pakaian Anda babak baru dengan menjualnya melalui ModiX. Ini adalah tentang pilihan cerdas untuk lemari pakaian dan dompet Anda.
+                    </p>
+                </div>
+                <div class="story-video">
+                     <video controls preload="metadata">
+                        <source src="assets/Selamat_datang_di_ModiX_V1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="contact-section">
-      <h2>Kontak Kami</h2>
-      <div class="contact-item">
-        <span id="address">Jl. Mawar No.123, Jakarta</span>
-        <button onclick="copyText('address')">Salin Alamat</button>
-      </div>
-      <div class="contact-item">
-        <span id="phone">0812-3456-7890</span>
-        <button onclick="copyText('phone')">Salin Telepon</button>
-      </div>
+    <section class="what-we-stand-for-section">
+        <div class="container">
+            <h2>What We Stand For</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Curated & Diverse Fashion</h3>
+                    <p>Jelajahi beragam pakaian baru dan bekas. Kami berfokus pada kualitas dan variasi, memastikan selalu ada sesuatu untuk setiap selera dan anggaran.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Empowering Sellers</h3>
+                    <p>Bergabunglah dengan platform kami untuk menjual pakaian Anda dengan mudah, merapikan lemari pakaian Anda, dan mendapatkan penghasilan tambahan. Kami membuat prosesnya praktis dan bermanfaat.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Trusted & Seamless Experience</h3>
+                    <p>Kepuasan Anda adalah prioritas kami. Kami berusaha keras untuk memberikan pengalaman berbelanja dan berjualan online yang nyaman, aman, dan menyenangkan dari awal hingga akhir.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="testimoni-section">
-      <h2>Testimoni Pelanggan</h2>
-      <div class="slider">
-        <button onclick="prevSlide()">‹</button>
-        <div id="testimoni-container"></div>
-        <button onclick="nextSlide()">›</button>
-      </div>
+    <section class="community-impact-section">
+        <div class="container">
+            <div class="impact-counter-container">
+                 <h2>Join Our Thriving Community</h2>
+                 <p>Kami sangat bangga dengan komunitas yang dinamis yang kami bangun bersama. Kepercayaan dan kepuasan Anda mendorong semangat kami.</p>
+                <div class="counter-box">
+                    <div id="buyer-counter">0</div> <p>Para Penggemar Mode yang Puas & Terus Bertambah!</p>
+                </div>
+            </div>
+
+            <div class="testimonials-container">
+                <h2>Voices of ModiX</h2>
+                <div class="slider">
+                    <button onclick="prevSlide()" aria-label="Previous Testimonial">‹</button>
+                    <div id="testimoni-container"></div> <button onclick="nextSlide()" aria-label="Next Testimonial">›</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="map-section">
-      <h2>Lokasi Toko Kami</h2>
-      <iframe
-        src="https://maps.google.com/maps?q=binus%20university&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      >
-      </iframe>
+    <section class="connect-with-us-section">
+        <div class="container">
+            <h2>Hubungi & Kunjungi Kami</h2>
+            <div class="connect-grid">
+                <div class="contact-details">
+                    <h3>Informasi Kontak</h3>
+                    <p>Punya pertanyaan atau ingin berkolaborasi? Kami akan senang mendengar pendapat Anda.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span id="address">Jl. Mawar No.123, Jakarta</span>
+                            <button class="copy-btn" onclick="copyText('address')">Salin Alamat</button>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span id="phone">0812-3456-7890</span>
+                            <button class="copy-btn" onclick="copyText('phone')">Salin Telepon</button>
+                        </div>
+                    </div>
+                     <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span>info@modix.com</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="map-location">
+                    <h3>Lokasi Toko Kami</h3>
+                    <p>Ayo menyapa! Kami berlokasi tepat di jantung kota Jakarta.</p>
+                    <div class="map-embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.466734850804!2d106.779689373167!3d-6.201993460751748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7a686719197%3A0xf21b75685ccc3d02!2sBinus%20anggrek!5e0!3m2!1sen!2sid!4v1748610987279!5m2!1sen!2sid" /* !!! REPLACE THIS WITH YOUR ACTUAL GOOGLE MAPS EMBED CODE !!! */
+                            width="600"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-container">
@@ -155,7 +205,7 @@
           </div>
         </div>
         <div class="copyright">
-          &copy; 2025 FashionStore. All Rights Reserved.
+          © 2025 FashionStore. All Rights Reserved.
         </div>
       </div>
     </footer>
