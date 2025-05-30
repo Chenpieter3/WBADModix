@@ -4,33 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Detail | ModiX</title>
-  <link rel="stylesheet" href="product-baju-detail.css" />
+  <link rel="stylesheet" href="product-celana-detail.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <div class="logo">ModiX</div>
-      <ul class="nav-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="kategori-baju.html" class="active">Shop</a></li>
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="header-icons">
-        <a href="#"><i class="fas fa-search"></i></a>
-        <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#" class="cart-icon-wrapper" style="position: relative;">
-          <i class="fas fa-shopping-bag"></i>
-          <span id="cart-badge" style="display:none; position:absolute; top:-6px; right:-10px; background:red; color:white; font-size:10px; border-radius:50%; padding:2px 5px;">●</span>
-        </a>
-        
-      </div>
-    </div>
-  </header>
+    <header>
+        <div class="container header-container">
+            <div class="logo">ModiX</div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#" class="active">Shop</a>
+                    <ul class="dropdown">
+                        <li><a href="./kategori-baju.html">Tops</a></li>
+                        <li><a href="./kategori-celana.html">Bottoms</a></li>
+                        <li><a href="./kategori-accessories.html">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </header>
 
   <!-- Category Header -->
   <div class="category-header">
@@ -57,7 +59,7 @@
           <button class="carousel-btn prev-btn" onclick="prevImage()">
             <i class="fas fa-chevron-left"></i>
           </button>
-          <img id="main-img" src="assets/Baju 1.png" alt="Stripe Woman" />
+          <img id="main-img" src="./assets/Celana/Chino Formal/chino-pants-1.jpg" alt="Stripe Woman" />
           <button class="carousel-btn next-btn" onclick="nextImage()">
             <i class="fas fa-chevron-right"></i>
           </button>
@@ -65,17 +67,16 @@
         
         <!-- Thumbnail Images -->
         <div class="thumbnail-container">
-          <img class="thumbnail active" src="assets/Baju 1.png" alt="Product Image 1" />
-          <img class="thumbnail" src="assets/Baju 1a.png" alt="Product Image 2" />
-          <img class="thumbnail" src="assets/Baju 1b.png" alt="Product Image 3" />
-          <img class="thumbnail" src="assets/Baju 1c.png" alt="Product Image 4" />
+          <img class="thumbnail active" src="assets/Celana/Chino Formal/chino-pants-1.jpg" alt="Product Image 1" />
+          <img class="thumbnail" src="assets/Celana/Chino Formal/chino-pants-2.jpg" alt="Product Image 2" />
+          <img class="thumbnail" src="assets/Celana/Chino Formal/chino-pants-3.jpg" alt="Product Image 3" />
         </div>
       </div>
 
       <!-- Product Info -->
       <div class="product-detail-info">
         <h2>Stripe Black</h2>
-        <p class="product-price">$49.99</p>
+        <p class="product-price">Rp 250.000,00</p>
 
         <!-- Color Options -->
         <div class="product-options">
