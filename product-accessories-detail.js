@@ -53,14 +53,31 @@ function showToast(msg = "Item added to cart!") {
 
 function addToCart() {
   const selectedSize = document.querySelector('.size-btn.selected')?.textContent;
-  const selectedColor = document.querySelector('.color-option.active')?.dataset.color;
+  const quantity = parseInt(document.getElementById('quantity')?.value || '1', 10);
+  const productName = document.querySelector('.product-detail-info h2')?.textContent || 'Unknown Product';
+  const productPrice = document.querySelector('.product-price')?.textContent || '0';
+  const productImage = document.getElementById('main-img')?.src || '';
+  const productId = productName.toLowerCase().replace(/\s+/g, '-');
 
   if (!selectedSize) {
     showToast("Please select a size first!");
     return;
   }
 
-  showToast(`Added to cart! Size: ${selectedSize}, Color: ${selectedColor || 'Default'}`);
+  const cartItem = {
+    id: productId,
+    name: productName,
+    price: productPrice,
+    size: selectedSize,
+    quantity: quantity,
+    image: productImage
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(cartItem);
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  showToast(`Added to cart! ${quantity}x ${productName} (Size: ${selectedSize})`);
 
   const cartBadge = document.getElementById("cart-badge");
   if (cartBadge) {
@@ -102,12 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelectorAll('.color-option').forEach(btn => {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.color-option').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
 
   document.querySelector('.add-to-cart-btn')?.addEventListener('click', addToCart);
 });
