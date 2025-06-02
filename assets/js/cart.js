@@ -1,5 +1,7 @@
 // cart.js
 
+import { formatRupiah, showToast, getCart, updateHeaderCartBadge } from './utils.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.getElementById("cart-items-container");
   const emptyCartMessage = document.getElementById("empty-cart-message");
@@ -8,53 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItemCountElement = document.getElementById("cart-item-count");
   const checkoutBtn = document.querySelector(".checkout-btn");
 
-  // Function to format number as Rupiah
-  function formatRupiah(number) {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(number);
-  }
-
-  function getCart() {
-    try {
-      const cartData = localStorage.getItem("cart");
-      return cartData ? JSON.parse(cartData) : [];
-    } catch (e) {
-      console.error("Error parsing cart from localStorage", e);
-      return [];
-    }
-  }
-
   function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateHeaderCartBadge();
     renderCart();
-  }
-
-  function showToast(msg = "Cart updated!") {
-    const toast = document.getElementById("toast");
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 3000);
-  }
-
-  function updateHeaderCartBadge() {
-    const cart = getCart();
-    const cartBadge = document.getElementById("cart-badge");
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-    if (cartBadge) {
-      if (totalItems > 0) {
-        cartBadge.textContent = totalItems > 9 ? "9+" : totalItems;
-        cartBadge.style.display = "inline-block";
-      } else {
-        cartBadge.style.display = "none";
-      }
-    }
   }
 
   function renderCartItem(item) {
@@ -64,14 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const itemSubtotal = item.price * item.quantity;
 
-    // Resolve image path correctly - assuming 'assets' is at the same level or accessible from root
-    // If mainImage.src on product page is like "./assets/Celana/Chino Formal/chino-pants-1.jpg"
-    // And cart.html is at the root with product-celana-detail.html, this might need adjustment
-    // For robustness, you might want to store a more absolute-like path or a base path.
-    // For now, assume item.image is a usable path from cart.html's location.
     let imagePath = item.image;
-    // Example: if item.image is "http://localhost:xxxx/assets/Celana/..." it's fine.
-    // If it's "./assets/Celana/..." and cart.html is in the root, it should also be fine.
 
     itemElement.innerHTML = `
             <img src="${imagePath}" alt="${item.name}" class="cart-item-image"/>

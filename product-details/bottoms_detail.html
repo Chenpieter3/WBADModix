@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Detail | ModiX</title>
-  <link rel="stylesheet" href="product-accessories-detail.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
 
@@ -18,22 +17,21 @@
                 <li class="has-dropdown">
                     <a href="#" class="active">Shop</a>
                     <ul class="dropdown">
-                        <li><a href="./kategori-baju.html">Tops</a></li>
-                        <li><a href="./kategori-celana.html">Bottoms</a></li>
-                        <li><a href="./kategori-accessories.html">Accessories</a></li>
+                        <li><a href="../category/tops.html">Tops</a></li>
+                        <li><a href="../category/bottoms.html">Bottoms</a></li>
+                        <li><a href="../category/accessories.html">Accessories</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Collections</a></li>
                 <li><a href="#">About</a></li>
             </ul>
             <div class="header-icons">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-user"></i></a>
-                          <a href="cart.html" class="cart-icon-wrapper active">
-            <i class="fas fa-shopping-bag"></i>
-            <span id="cart-badge" class="cart-badge">●</span>
-          </a>
-
+                <a href="#">Search</a>
+                <a href="#">Account</a>
+                <a href="cart.html" class="cart-icon-wrapper active">
+                    Cart
+                    <span id="cart-badge" class="cart-badge">●</span>
+                </a>
             </div>
         </div>
     </header>
@@ -41,15 +39,15 @@
   <!-- Category Header -->
   <div class="category-header">
     <div class="container">
-      <h1>Laptop Sleeves</h1>
+      <h1>Chino Formal</h1>
       <div class="breadcrumb">
         <a href="#">Home</a>
         <span>/</span>
         <a href="#">Shop</a>
         <span>/</span>
-        <a href="#">Accessories</a>
+        <a href="#">Bottoms</a>
         <span>/</span>
-        <a href="#">Laptop Sleeves</a>
+        <a href="#">Chino Formal</a>
       </div>
     </div>
   </div>
@@ -60,35 +58,38 @@
       <!-- Product Image Carousel -->
       <div class="product-detail-image">
         <div class="image-carousel">
-          <button class="carousel-btn prev-btn" onclick="prevImage()">
-            <i class="fas fa-chevron-left"></i>
+          <button class="carousel-btn prev-btn">
+            &lt;
           </button>
-          <img id="main-img" src="./assets/Accessories/Laptop-sleeve 1.webp" alt="Laptop Sleeves" />
-          <button class="carousel-btn next-btn" onclick="nextImage()">
-            <i class="fas fa-chevron-right"></i>
+          <img id="main-img" src="../assets/img/bottoms/Chino Formal/chino-pants-1.jpg" alt="Chino Formal" />
+          <button class="carousel-btn next-btn">
+            &gt;
           </button>
         </div>
         
         <!-- Thumbnail Images -->
         <div class="thumbnail-container">
-          <img class="thumbnail active" src="./assets/Accessories/Laptop-sleeve 1.webp" alt="Product Image 1" />
-          <img class="thumbnail" src="./assets/Accessories/Laptop-sleeve 2.jpg" alt="Product Image 2" />
-          <img class="thumbnail" src="./assets/Accessories/Laptop-sleeve 3.jpg" alt="Product Image 3" />
+          <img class="thumbnail active" src="../assets/img/bottoms/Chino Formal/chino-pants-1.jpg" alt="Product Image 1" />
+          <img class="thumbnail" src="../assets/img/bottoms/Chino Formal/chino-pants-2.jpg" alt="Product Image 2" />
+          <img class="thumbnail" src="../assets/img/bottoms/Chino Formal/chino-pants-3.jpg" alt="Product Image 3" />
         </div>
       </div>
 
       <!-- Product Info -->
       <div class="product-detail-info">
-        <h2>Laptop Sleeves</h2>
-        <p class="product-price">Rp 350.000,00</p>
+        <h2>Chino Formal</h2>
+        <p class="product-price">Rp 250.000,00</p>
 
 
           <!-- Size Options -->
           <div class="option-group">
             <label>Size</label>
             <div class="size-options">
-              <button class="size-btn" data-size="13 inch">13 inch</button>
-              <button class="size-btn" data-size="15 inch">15 inch</button>
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn disabled" data-size="XXL">XXL</button>
             </div>
           </div>
         
@@ -110,43 +111,42 @@
 
         <!-- Product Tabs -->
         <div class="product-tabs">
-          <button class="tab-btn active" onclick="openTab('description')">Description</button>
-          <button class="tab-btn" onclick="openTab('details')">Details</button>
-          <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+          <button class="tab-btn active" data-tab="description">Description</button>
+          <button class="tab-btn" data-tab="details">Details</button>
+          <button class="tab-btn" data-tab="reviews">Reviews</button>
         </div>
 
         <!-- Tab Contents -->
         <div class="tab-content active" id="description">
-          <p>Protect your tech in style with our Dark Blue Laptop Sleeve, designed for those who value both form and function. Made from a durable, denim-like fabric, this sleeve offers a modern look with a textured finish that feels as good as it looks.</p>
-          
-          <br>
-          <p>Featuring two main compartments, it gives you room for your laptop and accessories—perfect for chargers, notepads, or a tablet. The soft inner lining guards against scratches, while the slim silhouette makes it easy to slide into backpacks or carry on its own.</p>
+          <p>Crafted from a premium cotton-twill blend, the fabric offers a soft hand feel while maintaining structure and durability. The slim yet comfortable fit ensures a flattering silhouette without sacrificing movement, making them ideal for long days at the office or evening outings.
+          Pair them with a crisp shirt for formal flair or a relaxed tee for effortless everyday style.</p>
         </div>
         <div class="tab-content" id="details">
           <ul>
-            <li>Material: Durable denim-textured fabric</li>
-            <li>Pockets: Two main compartments for device & accessories</li>
-            <li>Closure: Smooth zipper with pull tab</li>
-            <li>Interior: Soft padding for scratch protection</li>
+            <li>Material: 98% Cotton, 2% Elastane</li>
+            <li>Fit: Regular Slim</li>
+            <li>Closure: Zip fly with button</li>
+            <li>Pockets: Two front slant pockets, two back welt pockets</li>
+            <li>Care Instructions: Machine washable; tumble dry low</li>
           </ul>
         </div>
         <div class="tab-content" id="reviews">
           <div class="reviews-section">
             <div class="review-summary">
               <div class="rating">
-                <span class="stars">★★★★★</span>
-                <span class="rating-text">5 out of 5 (12 reviews)</span>
+                <span class="stars">★★★★☆</span>
+                <span class="rating-text">4.2 out of 5 (34 reviews)</span>
               </div>
             </div>
             <div class="review-item">
-              <div class="reviewer-name">Marcus F.</div>
+              <div class="reviewer-name">Malik A.</div>
               <div class="review-rating">★★★★★</div>
-              <div class="review-text">Great quality! very suit for my laptop.</div>
+              <div class="review-text">Great quality chino pants! Fits perfectly and the material is very comfortable.</div>
             </div>
             <div class="review-item">
-              <div class="reviewer-name">Leo M.</div>
-              <div class="review-rating">★★★★★</div>
-              <div class="review-text">elegant! the compartments gives more space to bring my notebook</div>
+              <div class="reviewer-name">Bagus M.</div>
+              <div class="review-rating">★★★★☆</div>
+              <div class="review-text">Good chino but runs a bit small. Would recommend sizing up.</div>
             </div>
           </div>
         </div>
@@ -166,10 +166,10 @@
           <h3>ModiX</h3>
           <p>Premium quality clothing for the modern individual. Elegance meets comfort in every piece we create.</p>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+            <a href="#">IG</a>
+            <a href="#">PT</a>
           </div>
         </div>
         <div class="footer-column">
@@ -195,9 +195,9 @@
         <div class="footer-column">
           <h3>Contact</h3>
           <ul>
-            <li><i class="fas fa-map-marker-alt"></i> 123 Fashion St, City, Country</li>
-            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-            <li><i class="fas fa-envelope"></i> info@fashionstore.com</li>
+            <li>📍 123 Fashion St, City, Country</li>
+            <li>📞 +1 234 567 890</li>
+            <li>✉️ info@fashionstore.com</li>
           </ul>
         </div>
       </div>
@@ -207,6 +207,6 @@
     </div>
   </footer>
 
-  <script src="product-accessories-detail.js"></script>
+  <script src="../assets/js/product-detail.js" type="module"></script>
 </body>
 </html>

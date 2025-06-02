@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail | ModiX</title>
-    <link rel="stylesheet" href="product-baju-detail.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
   </head>
   <body>
     <!-- Header -->
@@ -20,19 +16,19 @@
           <li class="has-dropdown">
             <a href="#" class="active">Shop</a>
             <ul class="dropdown">
-              <li><a href="./kategori-baju.html">Tops</a></li>
-              <li><a href="./kategori-celana.html">Bottoms</a></li>
-              <li><a href="./kategori-accessories.html">Accessories</a></li>
+              <li><a href="../category/tops.html">Tops</a></li>
+              <li><a href="../category/bottoms.html">Bottoms</a></li>
+              <li><a href="../category/accessories.html">Accessories</a></li>
             </ul>
           </li>
           <li><a href="#">Collections</a></li>
           <li><a href="#">About</a></li>
         </ul>
         <div class="header-icons">
-          <a href="#"><i class="fas fa-search"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
+          <a href="#">Search</a>
+          <a href="#">Account</a>
           <a href="cart.html" class="cart-icon-wrapper active">
-            <i class="fas fa-shopping-bag"></i>
+            Cart
             <span id="cart-badge" class="cart-badge">●</span>
           </a>
         </div>
@@ -61,12 +57,12 @@
         <!-- Product Image Carousel -->
         <div class="product-detail-image">
           <div class="image-carousel">
-            <button class="carousel-btn prev-btn" onclick="prevImage()">
-              <i class="fas fa-chevron-left"></i>
+            <button class="carousel-btn prev-btn">
+              &lt;
             </button>
-            <img id="main-img" src="assets/Baju 1.png" alt="Stripe Woman" />
-            <button class="carousel-btn next-btn" onclick="nextImage()">
-              <i class="fas fa-chevron-right"></i>
+            <img id="main-img" src="../assets/img/tops/Baju 1.png" alt="Stripe Woman" />
+            <button class="carousel-btn next-btn">
+              &gt;
             </button>
           </div>
 
@@ -74,22 +70,22 @@
           <div class="thumbnail-container">
             <img
               class="thumbnail active"
-              src="assets/Baju 1.png"
+              src="../assets/img/tops/Baju 1.png"
               alt="Product Image 1"
             />
             <img
               class="thumbnail"
-              src="assets/Baju 1a.png"
+              src="../assets/img/tops/Baju 1a.png"
               alt="Product Image 2"
             />
             <img
               class="thumbnail"
-              src="assets/Baju 1b.png"
+              src="../assets/img/tops/Baju 1b.png"
               alt="Product Image 3"
             />
             <img
               class="thumbnail"
-              src="assets/Baju 1c.png"
+              src="../assets/img/tops/Baju 1c.png"
               alt="Product Image 4"
             />
           </div>
@@ -145,13 +141,13 @@
 
           <!-- Product Tabs -->
           <div class="product-tabs">
-            <button class="tab-btn active" onclick="openTab('description')">
+            <button class="tab-btn active" data-tab="description">
               Description
             </button>
-            <button class="tab-btn" onclick="openTab('details')">
+            <button class="tab-btn" data-tab="details">
               Details
             </button>
-            <button class="tab-btn" onclick="openTab('reviews')">
+            <button class="tab-btn" data-tab="reviews">
               Reviews
             </button>
           </div>
@@ -216,10 +212,10 @@
               comfort in every piece we create.
             </p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#">FB</a>
+              <a href="#">TW</a>
+              <a href="#">IG</a>
+              <a href="#">PT</a>
             </div>
           </div>
           <div class="footer-column">
@@ -245,12 +241,9 @@
           <div class="footer-column">
             <h3>Contact</h3>
             <ul>
-              <li>
-                <i class="fas fa-map-marker-alt"></i> 123 Fashion St, City,
-                Country
-              </li>
-              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-              <li><i class="fas fa-envelope"></i> info@fashionstore.com</li>
+              <li>📍 123 Fashion St, City, Country</li>
+              <li>📞 +1 234 567 890</li>
+              <li>✉️ info@fashionstore.com</li>
             </ul>
           </div>
         </div>
@@ -260,6 +253,6 @@
       </div>
     </footer>
 
-    <script src="product-baju-detail.js"></script>
+    <script src="../assets/js/product-detail.js" type="module"></script>
   </body>
 </html>

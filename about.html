@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kategori Baju | ModiX</title>
-    <link rel="stylesheet" href="about.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header>
@@ -22,12 +18,11 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="header-icons">
-          <a href="#"><i class="fas fa-search"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
-          <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="cart.html" class="cart-icon-wrapper active">
-            <i class="fas fa-shopping-bag"></i>
-            <span id="cart-badge" class="cart-badge">●</span>
+          <a href="#">Search</a>
+          <a href="#">Account</a>
+          <a href="#">Wishlist</a>
+          <a href="cart.html" class="cart-icon-wrapper active">
+            Cart
           </a>
         </div>
       </div>
@@ -62,7 +57,7 @@
                 </div>
                 <div class="story-video">
                      <video controls preload="metadata">
-                        <source src="assets/Selamat_datang_di_ModiX_V1.mp4" type="video/mp4" />
+                        <source src="assets/video/Selamat_datang_di_ModiX_V1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -75,17 +70,17 @@
             <h2>What We Stand For</h2>
             <div class="values-grid">
                 <div class="value-item">
-                    <i class="fas fa-tshirt"></i>
+                    <span>👕</span>
                     <h3>Curated & Diverse Fashion</h3>
                     <p>Jelajahi beragam pakaian baru dan bekas. Kami berfokus pada kualitas dan variasi, memastikan selalu ada sesuatu untuk setiap selera dan anggaran.</p>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>💰</span>
                     <h3>Empowering Sellers</h3>
                     <p>Bergabunglah dengan platform kami untuk menjual pakaian Anda dengan mudah, merapikan lemari pakaian Anda, dan mendapatkan penghasilan tambahan. Kami membuat prosesnya praktis dan bermanfaat.</p>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-shield-alt"></i>
+                    <span>🛡️</span>
                     <h3>Trusted & Seamless Experience</h3>
                     <p>Kepuasan Anda adalah prioritas kami. Kami berusaha keras untuk memberikan pengalaman berbelanja dan berjualan online yang nyaman, aman, dan menyenangkan dari awal hingga akhir.</p>
                 </div>
@@ -106,8 +101,9 @@
             <div class="testimonials-container">
                 <h2>Voices of ModiX</h2>
                 <div class="slider">
-                    <button onclick="prevSlide()" aria-label="Previous Testimonial">‹</button>
-                    <div id="testimoni-container"></div> <button onclick="nextSlide()" aria-label="Next Testimonial">›</button>
+                    <button aria-label="Previous Testimonial">‹</button>
+                    <div id="testimoni-container"></div>
+                    <button aria-label="Next Testimonial">›</button>
                 </div>
             </div>
         </div>
@@ -121,21 +117,21 @@
                     <h3>Informasi Kontak</h3>
                     <p>Punya pertanyaan atau ingin berkolaborasi? Kami akan senang mendengar pendapat Anda.</p>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <span>📍</span>
                         <div>
                             <span id="address">Jl. Mawar No.123, Jakarta</span>
                             <button class="copy-btn" onclick="copyText('address')">Salin Alamat</button>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <span>📞</span>
                         <div>
                             <span id="phone">0812-3456-7890</span>
                             <button class="copy-btn" onclick="copyText('phone')">Salin Telepon</button>
                         </div>
                     </div>
                      <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <span>✉️</span>
                         <div>
                             <span>info@modix.com</span>
                             </div>
@@ -169,10 +165,10 @@
               comfort in every piece we create.
             </p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#">Facebook</a>
+              <a href="#">Twitter</a>
+              <a href="#">Instagram</a>
+              <a href="#">Pinterest</a>
             </div>
           </div>
           <div class="footer-column">
@@ -213,6 +209,6 @@
       </div>
     </footer>
 
-    <script src="about.js"></script>
+    <script src="assets/js/about.js" type="module"></script>
   </body>
 </html>

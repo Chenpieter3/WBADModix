@@ -4,12 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart | ModiX</title>
-    <link rel="stylesheet" href="product-celana-detail.css" />
-    <link rel="stylesheet" href="cart.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header>
@@ -20,19 +15,19 @@
           <li class="has-dropdown">
             <a href="#" class="active">Shop</a>
             <ul class="dropdown">
-              <li><a href="./kategori-baju.html">Tops</a></li>
-              <li><a href="./kategori-celana.html">Bottoms</a></li>
-              <li><a href="./kategori-accessories.html">Accessories</a></li>
+              <li><a href="category/tops.html">Tops</a></li>
+              <li><a href="category/bottoms.html">Bottoms</a></li>
+              <li><a href="category/accessories.html">Accessories</a></li>
             </ul>
           </li>
           <li><a href="#">Collections</a></li>
           <li><a href="#">About</a></li>
         </ul>
         <div class="header-icons">
-          <a href="#"><i class="fas fa-search"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
+          <a href="#">Search</a>
+          <a href="#">Account</a>
           <a href="cart.html" class="cart-icon-wrapper active">
-            <i class="fas fa-shopping-bag"></i>
+            Cart
             <span id="cart-badge" class="cart-badge">●</span>
           </a>
         </div>
@@ -60,12 +55,11 @@
             id="empty-cart-message"
             style="display: none; text-align: center; padding: 40px 0"
           >
-            <i
-              class="fas fa-shopping-cart fa-3x"
-              style="color: #ccc; margin-bottom: 20px"
-            ></i>
+            <span
+              style="color: #ccc; margin-bottom: 20px; font-size: 3em"
+            >🛒</span>
             <p>Your cart is currently empty.</p>
-            <a href="./kategori-celana.html" class="btn-continue-shopping"
+            <a href="category/bottoms.html" class="btn-continue-shopping"
               >Continue Shopping</a
             >
           </div>
@@ -86,7 +80,7 @@
             <span id="summary-total">Rp 0</span>
           </div>
           <button class="checkout-btn" disabled>Proceed to Checkout</button>
-          <a href="./kategori-celana.html" class="continue-shopping-link"
+          <a href="category/bottoms.html" class="continue-shopping-link"
             >Or Continue Shopping</a
           >
         </div>
@@ -105,10 +99,10 @@
               comfort in every piece we create.
             </p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#">Facebook</a>
+              <a href="#">Twitter</a>
+              <a href="#">Instagram</a>
+              <a href="#">Pinterest</a>
             </div>
           </div>
           <div class="footer-column">
@@ -149,6 +143,6 @@
       </div>
     </footer>
 
-    <script src="cart.js"></script>
+    <script src="assets/js/cart.js" type="module"></script>
   </body>
 </html>
