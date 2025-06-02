@@ -1,233 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bottoms | ModiX</title>
-    <link rel="stylesheet" href="kategori-celana.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="kategori-celana.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">ModiX</div>
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li class="has-dropdown">
-                    <a href="#" class="active">Shop</a>
-                    <ul class="dropdown">
-                        <li><a href="./kategori-baju.html">Tops</a></li>
-                        <li><a href="./kategori-celana.html">Bottoms</a></li>
-                        <li><a href="./kategori-accessories.html">Accessories</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Collections</a></li>
-                <li><a href="about.html">About</a></li>
+      <div class="container header-container">
+        <div class="logo">ModiX</div>
+        <ul class="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="active">Shop</a>
+            <ul class="dropdown">
+              <li><a href="./kategori-baju.html">Tops</a></li>
+              <li><a href="./kategori-celana.html">Bottoms</a></li>
+              <li><a href="./kategori-accessories.html">Accessories</a></li>
             </ul>
-            <div class="header-icons">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-user"></i></a>
-                <a href="#"><i class="fas fa-shopping-bag"></i></a>
-            </div>
+          </li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="header-icons">
+          <a href="cart.html" class="cart-icon-wrapper active">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-badge" class="cart-badge"></span>
+          </a>
         </div>
+      </div>
     </header>
 
     <!-- Category Header -->
     <div class="category-header">
-        <div class="container">
-            <h1>Bottoms</h1>
-            <div class="breadcrumb">
-                <a href="#">Home</a>
-                <span>/</span>
-                <a href="#">Shop</a>
-                <span>/</span>
-                <a href="#">Shirts</a>
-            </div>
+      <div class="container">
+        <h1>Bottoms</h1>
+        <div class="breadcrumb">
+          <a href="#">Home</a>
+          <span>/</span>
+          <a href="#">Shop</a>
+          <span>/</span>
+          <a href="#">Shirts</a>
         </div>
+      </div>
     </div>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Filters -->
-        <div class="filters">
-            <select class="sort-dropdown">
-                <option>Featured</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-            </select>
+      <!-- Filters -->
+      <div class="filters">
+        <select class="sort-dropdown">
+          <option>Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid">
+        <!-- Product Card 1 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Pencil Skirt/Pencil-Skirt-3.png"
+                alt="Elegant Basic Shirt Black"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Pencil Skirt</h3>
+              <p class="product-price">Rp 150.000,00</p>
+            </div>
+          </a>
         </div>
 
-        <!-- Product Grid -->
-        <div class="product-grid">
-            <!-- Product Card 1 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Pencil Skirt/Pencil-Skirt-3.png" alt="Elegant Basic Shirt Black">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Pencil Skirt</h3>
-                        <p class="product-price">Rp 150.000,00</p>
-                    </div>
-                </a>
+        <!-- Product Card 2 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Rok a-line/rok-aline-3.jpg"
+                alt="Classic White Shirt"
+              />
+              <div class="quick-view">Quick View</div>
             </div>
-
-            <!-- Product Card 2 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Rok a-line/rok-aline-3.jpg" alt="Classic White Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Rok A-line</h3>
-                        <p class="product-price">Rp 200.000,00</p>
-                    </div>
-                </a>
+            <div class="product-info">
+              <h3 class="product-title">Rok A-line</h3>
+              <p class="product-price">Rp 200.000,00</p>
             </div>
-
-            <!-- Product Card 3 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Midi Skirt/midi-skirt-2.jpg" alt="Navy Blue Oxford Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Rock Midi</h3>
-                        <p class="product-price">Rp 200.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Product Card 4 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Wrap Skirt/Wrap-skirt-2.jpg" alt="Loose Basic Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Wrap Skirt</h3>
-                        <p class="product-price">Rp 225.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Product Card 5 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Straight Pants/Straight-Pants-3.jpg" alt="Linen Summer Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Straight Pants</h3>
-                        <p class="product-price">RP 300.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Product Card 6 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Skinny Pants/Skinny-Pants-1.jpg" alt="Polo Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Skinny Pants</h3>
-                        <p class="product-price">Rp 325.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Product Card 7 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="assets/Celana/Wideleg Pants/Wide-Pants-1.jpg" alt="Denim Work Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Wide Leg</h3>
-                        <p class="product-price">Rp 325.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Product Card 8 -->
-            <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Highwaist Pants/highwaist-3.png" alt="Formal Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">High Waist</h3>
-                        <p class="product-price">Rp 300.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-             <!-- Product Card 9 -->
-             <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="assets/Celana/Ankle Pants/Ankle-pants-1.png" alt="Work Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Ankle Pants</h3>
-                        <p class="product-price">Rp 350.000,00 </p>
-                    </div>
-                </a>
-            </div>
-
-             <!-- Product Card 10 -->
-             <div class="product-card">
-                <a href="./product-detail-celana.html">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Chino Formal/chino-pants-1.jpg" alt="Sweater Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Chino Formal</h3>
-                        <p class="product-price">Rp 250.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-             <!-- Product Card 11 -->
-             <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Cargo Pants/cargo-pants-3.png" alt="Tank Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Cargo Office</h3>
-                        <p class="product-price">Rp 400.000,00</p>
-                    </div>
-                </a>
-            </div>
-
-             <!-- Product Card 12 -->
-             <div class="product-card">
-                <a href="#">
-                    <div class="product-image">
-                        <img src="./assets/Celana/Palazzo/palazzo 2.png" alt="Brown Shirt">
-                        <div class="quick-view">Quick View</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Palazzo</h3>
-                        <p class="product-price">Rp 275.000,00</p>
-                    </div>
-                </a>
-            </div>
+          </a>
         </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Midi Skirt/midi-skirt-2.jpg"
+                alt="Navy Blue Oxford Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Rock Midi</h3>
+              <p class="product-price">Rp 200.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Wrap Skirt/Wrap-skirt-2.jpg"
+                alt="Loose Basic Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Wrap Skirt</h3>
+              <p class="product-price">Rp 225.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Straight Pants/Straight-Pants-3.jpg"
+                alt="Linen Summer Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Straight Pants</h3>
+              <p class="product-price">RP 300.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Skinny Pants/Skinny-Pants-1.jpg"
+                alt="Polo Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Skinny Pants</h3>
+              <p class="product-price">Rp 325.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 7 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="assets/Celana/Wideleg Pants/Wide-Pants-1.jpg"
+                alt="Denim Work Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Wide Leg</h3>
+              <p class="product-price">Rp 325.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 8 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Highwaist Pants/highwaist-3.png"
+                alt="Formal Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">High Waist</h3>
+              <p class="product-price">Rp 300.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 9 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="assets/Celana/Ankle Pants/Ankle-pants-1.png"
+                alt="Work Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Ankle Pants</h3>
+              <p class="product-price">Rp 350.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 10 -->
+        <div class="product-card">
+          <a href="./product-detail-celana.html">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Chino Formal/chino-pants-1.jpg"
+                alt="Sweater Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Chino Formal</h3>
+              <p class="product-price">Rp 250.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 11 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Cargo Pants/cargo-pants-3.png"
+                alt="Tank Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Cargo Office</h3>
+              <p class="product-price">Rp 400.000,00</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Product Card 12 -->
+        <div class="product-card">
+          <a href="#">
+            <div class="product-image">
+              <img
+                src="./assets/Celana/Palazzo/palazzo 2.png"
+                alt="Brown Shirt"
+              />
+              <div class="quick-view">Quick View</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Palazzo</h3>
+              <p class="product-price">Rp 275.000,00</p>
+            </div>
+          </a>
+        </div>
+      </div>
     </main>
 
     <!-- Toast Notification (hidden by default) -->
@@ -235,56 +274,59 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>ModiX</h3>
-                    <p>Premium quality clothing for the modern individual. Elegance meets comfort in every piece we create.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Shop</h3>
-                    <ul>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Best Sellers</a></li>
-                        <li><a href="#">Sale Items</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">Accessories</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Help</h3>
-                    <ul>
-                        <li><a href="#">Customer Service</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion St, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-envelope"></i> info@fashionstore.com</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-column">
+            <h3>ModiX</h3>
+            <p>
+              Premium quality clothing for the modern individual. Elegance meets
+              comfort in every piece we create.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
             </div>
-            <div class="copyright">
-                &copy; 2025 FashionStore. All Rights Reserved.
-            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">Sale Items</a></li>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Help</h3>
+            <ul>
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Fashion St, City,
+                Country
+              </li>
+              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+              <li><i class="fas fa-envelope"></i> info@fashionstore.com</li>
+            </ul>
+          </div>
         </div>
+        <div class="copyright">
+          &copy; 2025 FashionStore. All Rights Reserved.
+        </div>
+      </div>
     </footer>
 
-  <script src="kategori-celana.js"></script>
-
-</body>
+    <script src="kategori-celana.js"></script>
+  </body>
 </html>
-
- 
