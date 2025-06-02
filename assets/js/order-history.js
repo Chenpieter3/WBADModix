@@ -1,46 +1,9 @@
+import { formatRupiah, updateHeaderCartBadge, formatDate } from './utils.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   const orderListContainer = document.getElementById("order-list-container");
   const emptyHistoryMessage = document.querySelector(".empty-history-message");
   const headerCartBadge = document.getElementById("cart-badge"); // Untuk update badge keranjang
-
-  function formatRupiah(number) {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(number);
-  }
-
-  function formatDate(dateString) {
-    const options = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    };
-    return new Date(dateString)
-      .toLocaleDateString("id-ID", options)
-      .replace(/\./g, ":"); // Ganti titik pemisah jam
-  }
-
-  // Fungsi untuk update badge keranjang di header (bisa disamakan dengan di checkout.js)
-  function updateHeaderCartBadge() {
-    const cartData = localStorage.getItem("cart"); // Cek keranjang aktif
-    const cart = cartData ? JSON.parse(cartData) : [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-    if (headerCartBadge) {
-      if (totalItems > 0) {
-        headerCartBadge.textContent = totalItems > 9 ? "9+" : totalItems;
-        headerCartBadge.style.display = "inline-block";
-      } else {
-        headerCartBadge.style.display = "none";
-      }
-    }
-  }
 
   function renderOrderHistory() {
     const completedOrdersData = localStorage.getItem("completedOrders");

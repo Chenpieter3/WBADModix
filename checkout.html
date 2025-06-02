@@ -4,13 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout | ModiX</title>
-    <link rel="stylesheet" href="product-celana-detail.css" />
-    <link rel="stylesheet" href="cart.css" />
-    <link rel="stylesheet" href="checkout.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header>
@@ -21,19 +15,19 @@
           <li class="has-dropdown">
             <a href="#">Shop</a>
             <ul class="dropdown">
-              <li><a href="./kategori-baju.html">Tops</a></li>
-              <li><a href="./kategori-celana.html">Bottoms</a></li>
-              <li><a href="./kategori-accessories.html">Accessories</a></li>
+              <li><a href="category/tops.html">Tops</a></li>
+              <li><a href="category/bottoms.html">Bottoms</a></li>
+              <li><a href="category/accessories.html">Accessories</a></li>
             </ul>
           </li>
           <li><a href="#">Collections</a></li>
           <li><a href="#">About</a></li>
         </ul>
         <div class="header-icons">
-          <a href="#"><i class="fas fa-search"></i></a>
-          <a href="#"><i class="fas fa-user"></i></a>
+          <a href="#">Search</a>
+          <a href="#">Account</a>
           <a href="cart.html" class="cart-icon-wrapper active">
-            <i class="fas fa-shopping-bag"></i>
+            Cart
             <span id="cart-badge" class="cart-badge">●</span>
           </a>
         </div>
@@ -88,7 +82,7 @@
                 checked
               />
               <label for="bank-transfer">
-                <i class="fas fa-university"></i> Bank Transfer
+                <span>🏦</span> Bank Transfer
               </label>
             </div>
             <div class="payment-option">
@@ -99,13 +93,13 @@
                 value="e_wallet"
               />
               <label for="e-wallet">
-                <i class="fas fa-wallet"></i> E-Wallet (GoPay, OVO, Dana, etc.)
+                <span>💳</span> E-Wallet (GoPay, OVO, Dana, etc.)
               </label>
             </div>
             <div class="payment-option">
               <input type="radio" id="cod" name="paymentMethod" value="cod" />
               <label for="cod">
-                <i class="fas fa-hand-holding-usd"></i> Cash on Delivery (COD)
+                <span>💵</span> Cash on Delivery (COD)
               </label>
             </div>
           </div>
@@ -173,9 +167,8 @@
       <div class="popup-content">
         <span class="popup-close-btn" id="close-success-popup">&times;</span>
         <i
-          class="fas fa-check-circle fa-3x"
-          style="color: #28a745; margin-bottom: 15px"
-        ></i>
+          style="color: #28a745; margin-bottom: 15px; font-size: 3em"
+        >✅</i>
         <h2>Payment Successful!</h2>
         <p>Thank you for your purchase. Your order is being processed.</p>
         <a href="#" class="btn-continue-shopping" id="popup-continue-shopping"
@@ -196,10 +189,10 @@
               comfort in every piece we create.
             </p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#">Facebook</a>
+              <a href="#">Twitter</a>
+              <a href="#">Instagram</a>
+              <a href="#">Pinterest</a>
             </div>
           </div>
           <div class="footer-column">
@@ -240,6 +233,6 @@
       </div>
     </footer>
 
-    <script src="checkout.js"></script>
+    <script src="assets/js/checkout.js" type="module"></script>
   </body>
 </html>

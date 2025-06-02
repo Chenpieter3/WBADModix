@@ -1,5 +1,7 @@
 // checkout.js
 
+import { formatRupiah, showToast, getCart, updateHeaderCartBadge, formatDate } from './utils.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   // ... (Elemen-elemen dan fungsi-fungsi awal seperti formatRupiah, getCart, showToast, updateHeaderCartBadge, renderOrderSummary, validateShippingForm, getSelectedPaymentMethod, displayPaymentInstructions tetap sama) ...
 
@@ -12,58 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupContinueShoppingBtn = document.getElementById("popup-continue-shopping"); // Ini akan kita ubah fungsinya
   
   // --- AWAL FUNGSI YANG SUDAH ADA (tidak perlu diubah) ---
-  function formatRupiah(number) {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(number);
-  }
-
-  function getCart() {
-    try {
-      const cartData = localStorage.getItem("cart");
-      return cartData ? JSON.parse(cartData) : [];
-    } catch (e) {
-      console.error("Error parsing cart from localStorage", e);
-      return [];
-    }
-  }
-  
-  function showToast(msg = "Action completed!", type = "success") {
-    const toast = document.getElementById("toast");
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.className = 'toast show';
-    if (type === 'error') {
-        toast.classList.add('error');
-    } else if (type === 'info') {
-        toast.classList.add('info');
-    }
-    setTimeout(() => toast.classList.remove("show"), 3000);
-  }
-
-  function updateHeaderCartBadge() {
-    const cart = getCart(); // Mengambil data keranjang yang aktif
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const headerCartBadge = document.getElementById("cart-badge");
-    if (headerCartBadge) {
-      if (totalItems > 0) {
-        headerCartBadge.textContent = totalItems > 9 ? "9+" : totalItems;
-        headerCartBadge.style.display = "inline-block";
-      } else {
-        headerCartBadge.style.display = "none";
-      }
-    }
-  }
-
   function renderOrderSummary() {
     const cart = getCart();
     const checkoutItemsContainer = document.getElementById("checkout-items-container");
     const summarySubtotalElement = document.getElementById("checkout-summary-subtotal");
     const summaryTotalElement = document.getElementById("checkout-summary-total");
-    const placeOrderBtn = document.getElementById("place-order-btn"); // Ambil lagi di sini untuk konteks fungsi
+    const placeOrderBtn = document.getElementById("place-order-btn");
 
     if (!checkoutItemsContainer || !summarySubtotalElement || !summaryTotalElement) {
         console.error("One or more summary elements are missing from the DOM for checkout summary.");
@@ -196,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleCloseInstructionPopup() {
     const paymentInstructionPopup = document.getElementById("payment-instruction-popup");
-    const iHavePaidBtn = document.getElementById("i-have-paid-btn"); // Ambil lagi di sini
+    const iHavePaidBtn = document.getElementById("i-have-paid-btn");
 
     if (paymentInstructionPopup) paymentInstructionPopup.style.display = "none";
     if (placeOrderBtn) placeOrderBtn.style.display = "none"; 
@@ -217,11 +173,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const iHavePaidBtn = document.getElementById("i-have-paid-btn");
   if (iHavePaidBtn) {
     iHavePaidBtn.addEventListener("click", () => {
-      const paymentSuccessPopup = document.getElementById("payment-success-popup"); // Ambil lagi di sini
+      const paymentSuccessPopup = document.getElementById("payment-success-popup");
       if (paymentSuccessPopup) paymentSuccessPopup.style.display = "flex";
       iHavePaidBtn.disabled = true; 
 
-      // **MODIFIKASI DIMULAI DI SINI**
       const currentCart = getCart();
       const totalAmountForOrder = currentCart.reduce((sum, item) => sum + item.price * item.quantity, 0);
       
@@ -236,24 +191,17 @@ document.addEventListener("DOMContentLoaded", () => {
               phone: document.getElementById('phone-number').value
           },
           paymentMethod: getSelectedPaymentMethod(),
-          status: "Processing" // Status awal
+          status: "Processing"
       };
 
       let completedOrders = JSON.parse(localStorage.getItem("completedOrders")) || [];
       completedOrders.push(orderDetails);
       localStorage.setItem("completedOrders", JSON.stringify(completedOrders));
       console.log("Order saved to completedOrders:", orderDetails);
-      // **MODIFIKASI SELESAI DI SINI**
 
       localStorage.removeItem("cart");
       renderOrderSummary(); 
-      updateHeaderCartBadge(); 
-      console.log("Cart cleared from localStorage.");
-
-      // Ubah teks tombol di popup sukses jika ada
-      if(popupContinueShoppingBtn) {
-        popupContinueShoppingBtn.textContent = "View Order History";
-      }
+      updateHeaderCartBadge();
     });
   }
   
