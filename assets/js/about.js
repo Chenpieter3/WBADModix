@@ -1,3 +1,5 @@
+import { toggleResponsiveMenu } from './utils.js';
+
 // Counter Animation
 let counter = document.getElementById("buyer-counter");
 let target = 5123;
@@ -97,6 +99,6 @@ container?.addEventListener('mouseleave', () => {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  animateCounter();
   showTestimonial(index);
+  toggleResponsiveMenu();
 });

@@ -1,4 +1,4 @@
-import { formatRupiah, updateHeaderCartBadge, formatDate } from './utils.js';
+import { formatRupiah, updateHeaderCartBadge, formatDate, toggleResponsiveMenu } from './utils.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const orderListContainer = document.getElementById("order-list-container");
@@ -100,4 +100,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Panggil saat halaman dimuat
   renderOrderHistory();
   updateHeaderCartBadge(); // Pastikan badge keranjang di header sudah benar (harusnya kosong)
+  toggleResponsiveMenu();
 });

@@ -1,4 +1,4 @@
-import { formatRupiah, showToast, updateHeaderCartBadge, getCart } from './utils.js';
+import { formatRupiah, showToast, updateHeaderCartBadge, getCart, toggleResponsiveMenu } from './utils.js';
 
 // Image carousel functionality
 let currentImageIndex = 0;
@@ -153,4 +153,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateHeaderCartBadge();
+  toggleResponsiveMenu();
 }); 

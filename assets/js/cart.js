@@ -1,6 +1,6 @@
 // cart.js
 
-import { formatRupiah, showToast, getCart, updateHeaderCartBadge } from './utils.js';
+import { formatRupiah, showToast, getCart, updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.getElementById("cart-items-container");
@@ -156,4 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  toggleResponsiveMenu();
 });

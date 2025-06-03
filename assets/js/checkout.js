@@ -1,6 +1,6 @@
 // checkout.js
 
-import { formatRupiah, showToast, getCart, updateHeaderCartBadge, formatDate } from './utils.js';
+import { formatRupiah, showToast, getCart, updateHeaderCartBadge, formatDate, toggleResponsiveMenu } from './utils.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   // ... (Elemen-elemen dan fungsi-fungsi awal seperti formatRupiah, getCart, showToast, updateHeaderCartBadge, renderOrderSummary, validateShippingForm, getSelectedPaymentMethod, displayPaymentInstructions tetap sama) ...
@@ -239,4 +239,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial Load
   renderOrderSummary();
   updateHeaderCartBadge();
+
+  toggleResponsiveMenu();
 });
