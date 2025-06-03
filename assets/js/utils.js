@@ -59,4 +59,56 @@ export function formatDate(dateString) {
   return new Date(dateString)
     .toLocaleDateString("id-ID", options)
     .replace(/\./g, ":");
+}
+
+export function toggleResponsiveMenu() {
+  var hamburger = document.getElementById('hamburger-menu');
+  var nav = document.getElementById('main-nav');
+  var overlay = document.getElementById('nav-overlay');
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('open');
+      if (overlay) overlay.classList.toggle('open');
+    });
+    if (overlay) {
+      overlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        nav.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+    // Dropdown on mobile: click to open (event only on <a> inside .has-dropdown)
+    var dropdownLinks = nav.querySelectorAll('.has-dropdown > a');
+    dropdownLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          var parent = this.parentElement;
+          parent.classList.toggle('dropdown-open');
+        }
+      });
+    });
+    // Close menu on link click (except dropdown parent)
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var parentLi = link.parentElement;
+        if (
+          window.innerWidth <= 900 &&
+          !parentLi.classList.contains('has-dropdown')
+        ) {
+          hamburger.classList.remove('active');
+          nav.classList.remove('open');
+          if (overlay) overlay.classList.remove('open');
+        }
+      });
+    });
+  }
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 900) {
+      document.querySelectorAll('.has-dropdown.dropdown-open').forEach(function(el) {
+        el.classList.remove('dropdown-open');
+      });
+    }
+  });
 } 

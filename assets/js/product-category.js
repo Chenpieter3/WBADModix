@@ -1,4 +1,4 @@
-import { showToast } from './utils.js';
+import { showToast, toggleResponsiveMenu } from './utils.js';
 
 // Store initial product card arrangement on page load
 let initialCards = [];
@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    toggleResponsiveMenu();
 });
 
 // Function to reset grid to initial view
