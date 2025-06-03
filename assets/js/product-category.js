@@ -1,4 +1,4 @@
-import { showToast, toggleResponsiveMenu } from './utils.js';
+import { showToast, updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
 // Store initial product card arrangement on page load
 let initialCards = [];
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     toggleResponsiveMenu();
+    updateHeaderCartBadge();
 });
 
 // Function to reset grid to initial view
