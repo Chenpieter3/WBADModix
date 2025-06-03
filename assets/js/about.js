@@ -1,4 +1,4 @@
-import { toggleResponsiveMenu } from './utils.js';
+import { updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
 // Counter Animation
 let counter = document.getElementById("buyer-counter");
@@ -101,4 +101,5 @@ container?.addEventListener('mouseleave', () => {
 document.addEventListener('DOMContentLoaded', () => {
   showTestimonial(index);
   toggleResponsiveMenu();
+  updateHeaderCartBadge();
 });

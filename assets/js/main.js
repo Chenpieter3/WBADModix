@@ -1,4 +1,4 @@
-import { toggleResponsiveMenu } from './utils.js';
+import { updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
 $(document).ready(function() {
     // Initialize slider
@@ -110,6 +110,7 @@ function sendToWhatsApp() {
 
 document.addEventListener('DOMContentLoaded', function() {
   toggleResponsiveMenu();
+  updateHeaderCartBadge();
 });
 
 window.addEventListener('resize', function() {

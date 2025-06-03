@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <button class="cart-item-remove" data-id="${
               item.id
-            }"><i class="fas fa-trash-alt"></i></button>
+            }"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg></button>
         `;
 
     itemElement
@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showToast("Maximum quantity per item is 10.");
       }
       saveCart(cart);
+      updateHeaderCartBadge();
       if (cart[itemIndex].quantity < 10 || change < 0) {
         // Don't show toast if already at max and trying to increase
         showToast("Quantity updated!");
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let cart = getCart();
     cart = cart.filter((i) => i.id !== itemId);
     saveCart(cart);
+    updateHeaderCartBadge();
     showToast("Item removed from cart.");
   }
 

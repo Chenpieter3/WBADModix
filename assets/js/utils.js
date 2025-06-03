@@ -34,17 +34,23 @@ export function getCart() {
 
 export function updateHeaderCartBadge() {
   const cart = getCart();
-  const cartBadge = document.getElementById("cart-badge");
+  const cartBadgeMobile = document.getElementById("cart-badge-mobile");
+  const cartBadgeDesktop = document.getElementById("cart-badge-desktop");
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-  if (cartBadge) {
-    if (totalItems > 0) {
-      cartBadge.textContent = totalItems > 9 ? "9+" : totalItems;
-      cartBadge.style.display = "inline-block";
-    } else {
-      cartBadge.style.display = "none";
+  const updateBadge = (badge) => {
+    if (badge) {
+      if (totalItems > 0) {
+        badge.textContent = totalItems > 9 ? "9+" : totalItems;
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
     }
-  }
+  };
+
+  updateBadge(cartBadgeMobile);
+  updateBadge(cartBadgeDesktop);
 }
 
 export function formatDate(dateString) {
