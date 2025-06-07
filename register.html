@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Login - ModiX</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Header di-include seperti halaman utama -->
+    <header>
+      <div class="container header-container">
+        <div class="logo"><a href="/">ModiX</a></div>
+      </div>
+    </header>
+
+    <div class="auth-container" id="register-container">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <label for="regName">Nama</label>
+        <input type="text" id="regName" required />
+
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" required />
+
+        <label for="regPhone">No HP</label>
+        <input type="text" id="regPhone" required />
+
+        <label for="regAddress">Alamat</label>
+        <input type="text" id="regAddress" required />
+
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" required />
+
+        <label for="regConfirm">Confirm Password</label>
+        <input type="password" id="regConfirm" required />
+
+        <div class="error" id="regError"></div>
+
+        <button type="submit">Register</button>
+        <div class="toggle-link">
+          Sudah punya akun?
+          <a href="#" onclick="toggleForms('login')">Login di sini</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="auth-container" id="login-container" style="display: none">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" required />
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required />
+
+        <div class="error" id="loginError"></div>
+
+        <button type="submit">Login</button>
+        <div class="toggle-link">
+          Belum punya akun?
+          <a href="#" onclick="toggleForms('register')">Daftar sekarang</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer di-include seperti halaman utama -->
+    <footer>... (footer yang sama seperti halaman utama) ...</footer>
+
+    <script src="assets/js/register.js" type="module"></script>
+  </body>
+</html>
