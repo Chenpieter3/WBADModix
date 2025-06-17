@@ -1,6 +1,5 @@
 import { formatRupiah, showToast, updateHeaderCartBadge, getCart, toggleResponsiveMenu } from './utils.js';
 
-// Image carousel functionality
 let currentImageIndex = 0;
 const thumbnails = document.querySelectorAll('.thumbnail');
 const mainImage = document.getElementById('main-img');
@@ -12,7 +11,6 @@ function updateMainImage(index) {
     currentImageIndex = index;
 }
 
-// Add click event listeners to carousel buttons
 document.querySelector('.prev-btn').addEventListener('click', () => {
     currentImageIndex = (currentImageIndex - 1 + thumbnails.length) % thumbnails.length;
     updateMainImage(currentImageIndex);
@@ -23,14 +21,12 @@ document.querySelector('.next-btn').addEventListener('click', () => {
     updateMainImage(currentImageIndex);
 });
 
-// Add click event listeners to thumbnails
 thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener('click', () => {
         updateMainImage(index);
     });
 });
 
-// Tab functionality
 function openTab(tabId) {
     const tabContents = document.querySelectorAll('.tab-content');
     const tabButtons = document.querySelectorAll('.tab-btn');
@@ -42,7 +38,6 @@ function openTab(tabId) {
     document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
 }
 
-// Add click event listeners to tab buttons
 document.querySelectorAll('.tab-btn').forEach(button => {
     button.addEventListener('click', () => {
         openTab(button.dataset.tab);
@@ -53,11 +48,10 @@ function updateQuantity(change) {
   const qtyInput = document.getElementById("quantity");
   if (!qtyInput) return;
   let qty = parseInt(qtyInput.value, 10) || 1;
-  qty = Math.max(1, Math.min(10, qty + change)); // Max 10, Min 1
+  qty = Math.max(1, Math.min(10, qty + change));
   qtyInput.value = qty;
 }
 
-// Helper function to parse Rupiah string to number
 function parseRupiah(rupiahString) {
   if (!rupiahString) return 0;
   return parseFloat(rupiahString.replace(/[^0-9,-]+/g, "").replace(",", "."));

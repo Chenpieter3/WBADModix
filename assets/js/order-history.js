@@ -3,7 +3,7 @@ import { formatRupiah, updateHeaderCartBadge, formatDate, toggleResponsiveMenu }
 document.addEventListener("DOMContentLoaded", () => {
   const orderListContainer = document.getElementById("order-list-container");
   const emptyHistoryMessage = document.querySelector(".empty-history-message");
-  const headerCartBadge = document.getElementById("cart-badge"); // Untuk update badge keranjang
+  const headerCartBadge = document.getElementById("cart-badge");
 
   function renderOrderHistory() {
     const completedOrdersData = localStorage.getItem("completedOrders");
@@ -15,14 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Order list container or empty message element not found.");
       return;
     }
-    orderListContainer.innerHTML = ""; // Bersihkan konten sebelumnya
+    orderListContainer.innerHTML = "";
 
     if (completedOrders.length === 0) {
       if (emptyHistoryMessage) emptyHistoryMessage.style.display = "block";
     } else {
       if (emptyHistoryMessage) emptyHistoryMessage.style.display = "none";
 
-      // Tampilkan pesanan dengan yang terbaru di atas
       completedOrders
         .slice()
         .reverse()
@@ -97,8 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Panggil saat halaman dimuat
   renderOrderHistory();
-  updateHeaderCartBadge(); // Pastikan badge keranjang di header sudah benar (harusnya kosong)
+  updateHeaderCartBadge();
   toggleResponsiveMenu();
 });
