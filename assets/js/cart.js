@@ -1,5 +1,3 @@
-// cart.js
-
 import { formatRupiah, showToast, getCart, updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -76,14 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cart[itemIndex].quantity < 1) {
         cart[itemIndex].quantity = 1;
       } else if (cart[itemIndex].quantity > 10) {
-        // Max 10
         cart[itemIndex].quantity = 10;
         showToast("Maximum quantity per item is 10.");
       }
       saveCart(cart);
       updateHeaderCartBadge();
       if (cart[itemIndex].quantity < 10 || change < 0) {
-        // Don't show toast if already at max and trying to increase
         showToast("Quantity updated!");
       }
     }
@@ -103,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (sum, item) => sum + item.price * item.quantity,
       0
     );
-    const total = subtotal; // Assuming no shipping/taxes for now
+    const total = subtotal;
 
     if (summarySubtotalElement)
       summarySubtotalElement.textContent = formatRupiah(subtotal);
@@ -122,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderCart() {
     const cart = getCart();
-    if (!cartItemsContainer) return; // Guard clause
+    if (!cartItemsContainer) return;
     cartItemsContainer.innerHTML = "";
 
     const cartItemsSectionTitle = document.querySelector(
@@ -147,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartSummary();
   }
 
-  // Initial Load
   renderCart();
   updateHeaderCartBadge();
 

@@ -1,6 +1,5 @@
 import { updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
-// Counter Animation
 let counter = document.getElementById("buyer-counter");
 let target = 5123;
 let count = 0;
@@ -14,7 +13,6 @@ let counterInterval = setInterval(() => {
   }
 }, 50);
 
-// Copy Function with better error handling and feedback
 async function copyText(elementId) {
   try {
     const element = document.getElementById(elementId);
@@ -25,7 +23,6 @@ async function copyText(elementId) {
     const text = element.innerText;
     await navigator.clipboard.writeText(text);
     
-    // Show success feedback
     const originalText = element.innerText;
     element.innerText = 'Copied!';
     element.style.color = '#4CAF50';
@@ -40,7 +37,6 @@ async function copyText(elementId) {
   }
 }
 
-// Testimoni Slider with smooth transitions
 const testimonials = [
   { text: `"Layanannya cepat dan ramah!" - Andi`, rating: 5 },
   { text: `"Produk berkualitas, pengiriman cepat." - Sari`, rating: 5 },
@@ -68,7 +64,6 @@ function prevSlide() {
   showTestimonial(index);
 }
 
-// Add click event listeners to buttons
 if (prevButton) {
   prevButton.addEventListener('click', () => {
     clearInterval(testimonialInterval);
@@ -85,10 +80,8 @@ if (nextButton) {
   });
 }
 
-// Auto-advance testimonials
 let testimonialInterval = setInterval(nextSlide, 5000);
 
-// Pause auto-advance when hovering over testimonials
 container?.addEventListener('mouseenter', () => {
   clearInterval(testimonialInterval);
 });
@@ -97,7 +90,6 @@ container?.addEventListener('mouseleave', () => {
   testimonialInterval = setInterval(nextSlide, 5000);
 });
 
-// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   showTestimonial(index);
   toggleResponsiveMenu();

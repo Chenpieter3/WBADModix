@@ -1,5 +1,3 @@
-// Utility functions for the entire application
-
 export function formatRupiah(number) {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -84,7 +82,6 @@ export function toggleResponsiveMenu() {
         overlay.classList.remove('open');
       });
     }
-    // Dropdown on mobile: click to open (event only on <a> inside .has-dropdown)
     var dropdownLinks = nav.querySelectorAll('.has-dropdown > a');
     dropdownLinks.forEach(function(link) {
       link.addEventListener('click', function(e) {
@@ -95,7 +92,6 @@ export function toggleResponsiveMenu() {
         }
       });
     });
-    // Close menu on link click (except dropdown parent)
     nav.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function(e) {
         var parentLi = link.parentElement;

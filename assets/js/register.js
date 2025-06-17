@@ -1,3 +1,5 @@
+import { updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
+
 function toggleForms(form) {
   document.getElementById("register-container").style.display =
     form === "register" ? "block" : "none";
@@ -5,9 +7,9 @@ function toggleForms(form) {
     form === "login" ? "block" : "none";
 }
 
-document
-  .getElementById("registerForm")
-  .addEventListener("submit", function (e) {
+window.toggleForms = toggleForms;
+
+document.getElementById("registerForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const name = document.getElementById("regName").value.trim();
     const email = document.getElementById("regEmail").value.trim();
@@ -63,4 +65,17 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
   alert("Login berhasil!");
   window.location.href = "/index.html";
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  toggleResponsiveMenu();
+  updateHeaderCartBadge();
+});
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 900) {
+    document.querySelectorAll('.has-dropdown.dropdown-open').forEach(function(el) {
+      el.classList.remove('dropdown-open');
+    });
+  }
 });

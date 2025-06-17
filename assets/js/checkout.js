@@ -1,19 +1,9 @@
-// checkout.js
-
 import { formatRupiah, showToast, getCart, updateHeaderCartBadge, formatDate, toggleResponsiveMenu } from './utils.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ... (Elemen-elemen dan fungsi-fungsi awal seperti formatRupiah, getCart, showToast, updateHeaderCartBadge, renderOrderSummary, validateShippingForm, getSelectedPaymentMethod, displayPaymentInstructions tetap sama) ...
-
-  // Pastikan Anda memiliki definisi untuk elemen-elemen ini di awal file:
-  const shippingForm = document.getElementById("shipping-form"); // harus sudah ada
-  // const placeOrderBtn = document.getElementById("place-order-btn"); // harus sudah ada
-  // const iHavePaidBtn = document.getElementById("i-have-paid-btn"); // harus sudah ada
-  // const paymentSuccessPopup = document.getElementById("payment-success-popup"); // harus sudah ada
-  // const closeSuccessPopupBtn = document.getElementById("close-success-popup"); // harus sudah ada
-  const popupContinueShoppingBtn = document.getElementById("popup-continue-shopping"); // Ini akan kita ubah fungsinya
+  const shippingForm = document.getElementById("shipping-form");
+  const popupContinueShoppingBtn = document.getElementById("popup-continue-shopping");
   
-  // --- AWAL FUNGSI YANG SUDAH ADA (tidak perlu diubah) ---
   function renderOrderSummary() {
     const cart = getCart();
     const checkoutItemsContainer = document.getElementById("checkout-items-container");
@@ -110,10 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (instructionPopupDetails) instructionPopupDetails.innerHTML = detailsHTML;
     if (paymentInstructionPopup) paymentInstructionPopup.style.display = "flex";
   }
-  // --- AKHIR FUNGSI YANG SUDAH ADA ---
 
-
-  // Event Listener for Place Order Button
   const placeOrderBtn = document.getElementById("place-order-btn");
   if (placeOrderBtn) {
     placeOrderBtn.addEventListener("click", () => {
@@ -169,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     instructionPopupConfirmBtn.addEventListener("click", handleCloseInstructionPopup);
   }
 
-  // Event Listener for I Have Paid Button
   const iHavePaidBtn = document.getElementById("i-have-paid-btn");
   if (iHavePaidBtn) {
     iHavePaidBtn.addEventListener("click", () => {
@@ -206,9 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function handleCloseSuccessPopupAndRedirect() {
-    const paymentSuccessPopup = document.getElementById("payment-success-popup"); // Ambil lagi di sini
+    const paymentSuccessPopup = document.getElementById("payment-success-popup");
     if (paymentSuccessPopup) paymentSuccessPopup.style.display = "none";
-    // **MODIFIKASI: Arahkan ke histori pesanan**
     window.location.href = "order-history.html"; 
   }
 
@@ -220,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (popupContinueShoppingBtn) {
     popupContinueShoppingBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        handleCloseSuccessPopupAndRedirect(); // Fungsi yang sama untuk mengarahkan ke histori
+        handleCloseSuccessPopupAndRedirect();
     });
   }
 
@@ -229,14 +214,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const paymentSuccessPopup = document.getElementById("payment-success-popup");
 
     if (event.target === paymentInstructionPopup) { 
-        // handleCloseInstructionPopup(); // Opsional: tutup jika klik di luar
+        handleCloseInstructionPopup();
     }
     if (event.target === paymentSuccessPopup) { 
       handleCloseSuccessPopupAndRedirect();
     }
   });
 
-  // Initial Load
   renderOrderSummary();
   updateHeaderCartBadge();
 

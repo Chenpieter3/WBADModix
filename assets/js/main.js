@@ -1,7 +1,6 @@
 import { updateHeaderCartBadge, toggleResponsiveMenu } from './utils.js';
 
 $(document).ready(function() {
-    // Initialize slider
     const $slider = $('.slider-wrapper');
     const $slides = $('.slide');
     const $dots = $('.slider-dots');
@@ -9,12 +8,10 @@ $(document).ready(function() {
     let currentSlide = 0;
     let slideInterval;
 
-    // Create dots
     for (let i = 0; i < totalSlides; i++) {
         $dots.append(`<span class="dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></span>`);
     }
 
-    // Function to show slide
     function showSlide(index) {
         $slides.removeClass('active');
         $('.dot').removeClass('active');
@@ -25,7 +22,6 @@ $(document).ready(function() {
         currentSlide = index;
     }
 
-    // Next slide
     function nextSlide() {
         let next = currentSlide + 1;
         if (next >= totalSlides) {
@@ -34,7 +30,6 @@ $(document).ready(function() {
         showSlide(next);
     }
 
-    // Previous slide
     function prevSlide() {
         let prev = currentSlide - 1;
         if (prev < 0) {
@@ -43,7 +38,6 @@ $(document).ready(function() {
         showSlide(prev);
     }
 
-    // Start auto slide
     function startAutoSlide() {
         if (slideInterval) {
             clearInterval(slideInterval);
@@ -51,7 +45,6 @@ $(document).ready(function() {
         slideInterval = setInterval(nextSlide, 5000);
     }
 
-    // Stop auto slide
     function stopAutoSlide() {
         if (slideInterval) {
             clearInterval(slideInterval);
@@ -59,7 +52,6 @@ $(document).ready(function() {
         }
     }
 
-    // Event listeners
     $('.slider-nav.next').on('click', function() {
         stopAutoSlide();
         nextSlide();
@@ -79,10 +71,8 @@ $(document).ready(function() {
         startAutoSlide();
     });
 
-    // Start auto slide on page load
     startAutoSlide();
 
-    // Pause auto slide on hover
     $('.slider-container').hover(
         function() {
             stopAutoSlide();
